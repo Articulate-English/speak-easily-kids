@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.pexels.com https://cdn.pixabay.com; connect-src 'self'; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Speak Easily Kids — English Question Cards for Ages 9–12</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235e6ad2'/%3E%3Cpath d='M9 11h14v9H14l-5 4v-4H9z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;510;590;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090a;--bg2:#0f1011;--bg3:#191a1b;--bg-card:rgba(255,255,255,0.02);--bg-card2:#141516;
+  --border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--border-hover:rgba(255,255,255,0.12);
+  --text:#f7f8f8;--text-secondary:#d0d6e0;--text-muted:#8a8f98;--text-dim:#62666d;
+  --accent:#5e6ad2;--accent-hover:#7170ff;--accent-glow:rgba(94,106,210,0.25);--accent-bg:rgba(94,106,210,0.08);
+  --green:#10b981;--green-bg:rgba(16,185,129,0.08);
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+}
+[data-theme="light"]{
+  --bg:#f7f8f8;--bg2:#f3f4f5;--bg3:#e6e6e6;--bg-card:#ffffff;--bg-card2:#f5f6f7;
+  --border:rgba(0,0,0,0.08);--border-subtle:rgba(0,0,0,0.05);--border-hover:rgba(0,0,0,0.15);
+  --text:#171717;--text-secondary:#4a4a4a;--text-muted:#6b6b6b;--text-dim:#999999;
+  --accent:#5e6ad2;--accent-hover:#4f5bc0;--accent-glow:rgba(94,106,210,0.15);--accent-bg:rgba(94,106,210,0.05);
+}
+[data-theme="wte"]{--bg:#08090a;--bg2:#0f1011;--bg3:#191a1b;--accent:#a3e635;--accent-hover:#b8f54a;--accent-glow:rgba(163,230,53,0.25);--accent-bg:rgba(163,230,53,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#f7f8f8;--text-secondary:#d0d6e0;--text-muted:#8a8f98;--text-dim:#62666d;--bg-card:rgba(255,255,255,0.02)}
+[data-theme="jungle"]{--bg:#0F1400;--bg2:#1A2A0F;--bg3:#243515;--accent:#ffe000;--accent-hover:#ffec4d;--accent-glow:rgba(255,224,0,0.25);--accent-bg:rgba(255,224,0,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#E8F5D0;--text-secondary:#c8ddb0;--text-muted:#8aaa6a;--text-dim:#5a7a3a;--bg-card:rgba(255,255,255,0.02);--cta:#72ce27}
+[data-theme="ocean"]{--bg:#0A1428;--bg2:#142850;--bg3:#1e3c72;--accent:#abc4ff;--accent-hover:#c4d8ff;--accent-glow:rgba(171,196,255,0.25);--accent-bg:rgba(171,196,255,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#edf2fb;--text-secondary:#c8d8f0;--text-muted:#8a9ab0;--text-dim:#5a6a80;--bg-card:rgba(255,255,255,0.02);--cta:#ccdbfd}
+[data-theme="nebula"]{--bg:#1a0f2e;--bg2:#382c83;--bg3:#4a3a9a;--accent:#07f49e;--accent-hover:#3affb8;--accent-glow:rgba(7,244,158,0.25);--accent-bg:rgba(7,244,158,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#E8E0FF;--text-secondary:#c8c0ff;--text-muted:#8a80b0;--text-dim:#5a5080;--bg-card:rgba(255,255,255,0.02);--cta:#11cc99}
+[data-theme="beach"]{--bg:#0E1A2E;--bg2:#1A3050;--bg3:#244060;--accent:#eca9bb;--accent-hover:#f5c8d8;--accent-glow:rgba(236,169,187,0.25);--accent-bg:rgba(236,169,187,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#F0F0FF;--text-secondary:#d0d0f0;--text-muted:#9090b0;--text-dim:#606080;--bg-card:rgba(255,255,255,0.02);--cta:#45a0ea}
+[data-theme="planet"]{--bg:#14121E;--bg2:#221E3A;--bg3:#302a52;--accent:#f5ccd4;--accent-hover:#fadce4;--accent-glow:rgba(245,204,212,0.25);--accent-bg:rgba(245,204,212,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#c9def4;--text-secondary:#a8bed4;--text-muted:#7a90a0;--text-dim:#4a6070;--bg-card:rgba(255,255,255,0.02);--cta:#d0dbef}
+[data-theme="sunset"]{--bg:#1A0E0A;--bg2:#3A1C14;--bg3:#4a2a1c;--accent:#f9a470;--accent-hover:#ffb88a;--accent-glow:rgba(249,164,112,0.25);--accent-bg:rgba(249,164,112,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#FFF0E0;--text-secondary:#e0d0c0;--text-muted:#b0a090;--text-dim:#807060;--bg-card:rgba(255,255,255,0.02);--cta:#ef9770}
+[data-theme="clouds"]{--bg:#0C1828;--bg2:#182858;--bg3:#243870;--accent:#abc4ff;--accent-hover:#c4d8ff;--accent-glow:rgba(171,196,255,0.25);--accent-bg:rgba(171,196,255,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#edf2fb;--text-secondary:#c8d8f0;--text-muted:#8a9ab0;--text-dim:#5a6a80;--bg-card:rgba(255,255,255,0.02);--cta:#c1d3fe}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .3s ease,color .3s ease;font-feature-settings:'cv01','ss03'}
+::selection{background:var(--accent);color:#fff}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes kenBurns{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.08) translate(-1%,-1%)}100%{transform:scale(1.04) translate(1%,1%)}}
+@keyframes glow{0%,100%{box-shadow:0 0 8px var(--accent-glow)}50%{box-shadow:0 0 24px var(--accent-glow)}}
+
+/* ═══ NAV ═══ */
+.nav{position:sticky;top:0;z-index:50;background:rgba(8,9,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-subtle);padding:0 32px;height:52px;display:flex;align-items:center;justify-content:space-between;transition:background .3s ease}
+.nav-logo{font-family:var(--mono);font-size:.85rem;font-weight:500;color:var(--text);letter-spacing:0.5px;text-decoration:none}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.8rem;font-weight:510;padding:6px 12px;border-radius:6px;transition:all .15s}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.03)}
+.nav-cta{padding:6px 16px;border-radius:6px;background:var(--accent);color:#fff;text-decoration:none;font-size:.78rem;font-weight:590;transition:all .2s;border:1px solid transparent}
+.nav-cta:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 12px var(--accent-glow)}
+.theme-cycle-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);color:var(--text-muted);padding:5px 10px;border-radius:6px;cursor:pointer;font-family:var(--mono);font-size:.65rem;font-weight:510;transition:all .2s}
+.theme-cycle-btn:hover{border-color:var(--accent);color:var(--text);background:var(--accent-bg)}
+.theme-cycle-btn .dot{width:6px;height:6px;border-radius:50%;transition:background .2s}
+
+/* ═══ HERO / SECTION / LESSON GRID ═══ (single copy — the merged template had these twice) */
+
+/* ═══ DECK / SLIDE VIEW ═══ */
+.deck-view{display:none;position:fixed;inset:0;z-index:100;background:var(--bg);flex-direction:column}
+.deck-view.open{display:flex;animation:fadeIn .2s ease}
+
+.deck-topbar{display:flex;align-items:center;gap:8px;padding:10px 20px;border-bottom:1px solid var(--border-subtle);flex-shrink:0;background:rgba(8,9,10,0.95)}
+
+/* ── Linear-style buttons ── */
+.deck-back,.deck-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);
+  color:var(--text-muted);padding:7px 14px;border-radius:6px;
+  cursor:pointer;font-family:var(--font);font-size:.7rem;font-weight:510;
+  transition:all .15s cubic-bezier(.4,0,.2,1);
+  position:relative;overflow:hidden;
+}
+.deck-back::before,.deck-btn::before{
+  content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-bg),transparent);
+  opacity:0;transition:opacity .15s;
+}
+.deck-back:hover::before,.deck-btn:hover::before{opacity:1}
+.deck-back:hover,.deck-btn:hover{border-color:var(--accent);color:var(--text);background:rgba(255,255,255,0.05)}
+.deck-back:active,.deck-btn:active{transform:scale(0.97)}
+.deck-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.deck-btn.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);box-shadow:0 2px 8px var(--accent-glow);transform:translateY(-1px)}
+.deck-btn.primary:active{transform:scale(0.97)}
+.deck-btn.icon-btn{width:36px;height:36px;padding:0;justify-content:center;border-radius:50%}
+
+.deck-title{font-family:var(--font);font-size:.85rem;font-weight:510;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text-secondary);letter-spacing:-0.2px}
+.deck-title-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:0}
+.deck-title-topic{font-size:.85rem;font-weight:590;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;letter-spacing:-0.2px}
+.deck-title-cat{font-family:var(--mono);font-size:.6rem;color:var(--accent);letter-spacing:1px;text-transform:uppercase;opacity:.8}
+.deck-counter{font-family:var(--mono);font-size:.65rem;color:var(--text-muted);flex-shrink:0;display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border-subtle);border-radius:9999px;background:rgba(255,255,255,0.02)}
+.deck-counter .dc-current{font-size:.85rem;font-weight:590;color:var(--accent)}
+
+/* ── Full-screen slide ── */
+.slide-container{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative}
+
+/* Full-bleed background image */
+.slide-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.slide-bg img{width:100%;height:100%;object-fit:cover;animation:kenBurns 12s ease-in-out infinite alternate;transition:opacity .3s ease}
+.slide-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.7) 100%);pointer-events:none}
+
+/* Slide content overlay */
+.slide-content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:40px 60px;max-width:100%}
+@media(max-width:768px){.slide-content{padding:24px 20px}}
+
+/* ── Question text box ── */
+.slide-question-box{
+  background:rgba(0,0,0,0.45);
+  border:1px solid rgba(255,255,255,0.12);border-radius:12px;border-top:2px solid var(--accent);
+  padding:28px 32px;margin-bottom:16px;
+  animation:slideUp .4s ease .1s both;
+  box-shadow:0 4px 24px rgba(0,0,0,0.3),0 0 0 1px rgba(255,255,255,0.04) inset;
+}
+.slide-cat{font-family:var(--mono);font-size:.6rem;font-weight:510;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.slide-question{font-size:1.5rem;font-weight:510;line-height:1.35;color:#fff;letter-spacing:-0.5px;margin-bottom:12px}
+@media(max-width:768px){.slide-question{font-size:1.15rem}}
+.slide-paraphrase{font-size:.95rem;color:rgba(255,255,255,0.65);line-height:1.6;font-style:italic;padding-left:14px;border-left:2px solid rgba(255,255,255,0.15)}
+
+/* ── Vocab tooltips ── */
+.vocab-inline{border-bottom:2px dotted var(--accent);cursor:pointer;font-weight:560;color:var(--accent)}
+.vocab-tooltip{
+  position:fixed;z-index:120;max-width:300px;
+  background:rgba(12,14,18,0.97);border:1px solid var(--accent);border-radius:10px;
+  padding:12px 16px;font-size:.82rem;color:#fff;line-height:1.55;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.05);
+  pointer-events:none;opacity:0;transform:translateY(4px);
+  transition:opacity .18s,transform .18s;
+}
+.vocab-tooltip.show{opacity:1;transform:translateY(0)}
+.vocab-tooltip .vt-word{font-weight:700;color:var(--accent);display:block;margin-bottom:4px;font-size:.85rem}
+
+/* ── Go deeper ── */
+.go-deeper{font-size:.95rem;color:rgba(255,255,255,0.75);line-height:1.6;padding-left:14px;border-left:2px solid var(--accent);margin-top:6px}
+.go-deeper-label{display:block;font-family:var(--mono);font-size:.55rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+
+/* ── Reveal possible answers ── */
+.answers-card{
+  display:none;margin-top:16px;
+  background:rgba(0,0,0,0.45);
+  border:1px solid var(--accent);border-radius:12px;padding:18px 22px;
+  animation:slideUp .3s ease both;
+}
+.answers-card.show{display:block}
+.answers-card h4{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.answers-card ul{margin:0;padding-left:18px}
+.answers-card li{font-size:.9rem;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:7px}
+.answers-card li:last-child{margin-bottom:0}
+
+/* ── Bottom controls ── */
+.deck-controls{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-top:1px solid var(--border-subtle);flex-shrink:0;background:rgba(8,9,10,0.9);z-index:5}
+.deck-progress{flex:1;height:3px;background:rgba(255,255,255,0.06);border-radius:2px;max-width:280px;overflow:hidden}
+.deck-progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .3s cubic-bezier(.4,0,.2,1)}
+
+/* ── Category filter pills ── */
+.filter-bar{display:flex;gap:6px;padding:16px 32px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--border-subtle)}
+.filter-bar::-webkit-scrollbar{display:none}
+.filter-pill{
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);
+  color:var(--text-muted);padding:5px 14px;border-radius:9999px;
+  cursor:pointer;font-family:var(--font);font-size:.7rem;font-weight:510;
+  transition:all .15s;white-space:nowrap;flex-shrink:0;
+}
+.filter-pill:hover{border-color:var(--accent);color:var(--text);background:var(--accent-bg)}
+.filter-pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.filter-pill:active{transform:scale(0.96)}
+
+/* ═══ HOW IT WORKS ═══ */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.how-step{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:8px;padding:24px;transition:all .2s}
+.how-step:hover{border-color:var(--border);background:rgba(255,255,255,0.03)}
+.how-step-num{font-family:var(--mono);font-size:1.5rem;font-weight:500;color:var(--accent);opacity:.3;margin-bottom:8px}
+.how-step h3{font-size:.95rem;font-weight:510;letter-spacing:-0.2px;margin-bottom:6px}
+.how-step p{font-size:.85rem;color:var(--text-muted);line-height:1.6}
+
+/* ═══ FOOTER ═══ */
+.footer{padding:24px 32px;text-align:center;font-size:.7rem;color:var(--text-dim);border-top:1px solid var(--border-subtle)}
+
+.hero{padding:70px 40px 50px;text-align:center;max-width:800px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:20px;background:var(--bg3);border:1px solid var(--border);font-size:.7rem;font-weight:600;color:var(--accent);margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+.hero h1{font-family:var(--mono);font-size:2.8rem;font-weight:700;line-height:1.1;margin-bottom:10px}
+.hero h1 .accent{color:var(--accent)}
+.hero p{font-size:1rem;color:var(--text-muted);line-height:1.7;max-width:560px;margin:0 auto}
+
+.section{padding:60px 40px;max-width:1200px;margin:0 auto}
+.section-header{margin-bottom:40px}
+.section-header h2{font-family:var(--mono);font-size:1.6rem;font-weight:700;margin-bottom:6px}
+.section-header p{color:var(--text-muted);font-size:.9rem}
+.section-num{font-family:var(--mono);font-size:.6rem;font-weight:700;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+
+.lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.lesson-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;transition:transform .2s,border-color .2s,box-shadow .2s;text-decoration:none;color:inherit;display:block;overflow:hidden;position:relative;aspect-ratio:4/3}
+.lesson-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.5),0 0 0 1px var(--accent);filter:brightness(1.05)}
+.lesson-card:active{transform:translateY(-1px) scale(0.98);box-shadow:0 4px 16px rgba(0,0,0,0.3);transition-duration:.1s}
+.lesson-card-img-container{position:relative;width:100%;height:100%;overflow:hidden}
+.lesson-card-img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:1;transition:transform .3s ease}
+.lesson-card:hover .lesson-card-img{transform:scale(1.05)}
+.lesson-card-content{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;background:linear-gradient(transparent 40%,rgba(0,0,0,.8));pointer-events:none}
+.lesson-card-body{position:relative;z-index:4;pointer-events:auto}
+.lesson-cat{font-family:var(--mono);font-size:.55rem;font-weight:510;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.lesson-card h3{font-family:var(--mono);font-size:.9rem;font-weight:510;color:var(--text);margin-bottom:4px;letter-spacing:-0.2px}
+.lesson-count{font-size:.7rem;color:var(--text-dim)}
+
+/* ═══ DECK VIEW ═══ */
+
+@media(max-width:768px){
+  .nav{padding:0 16px}.nav-links{display:none}
+  .hero h1{font-size:2.2rem}
+  .section,.hero{padding-left:16px;padding-right:16px}
+  .lesson-grid{grid-template-columns:1fr}
+  .how-grid{grid-template-columns:1fr}
+}
+
+/* ═══ UTILITY ═══ */
+.hidden{display:none!important}
+
+/* (removed dead CSS for .slide-visuals / .deck-img-toggle / .deck-counter-v — no such markup) */
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="#" class="nav-logo">&#9670; <span>SPEAK</span> EASILY KIDS</a>
+  <div class="nav-links">
+      <a href="#lessons">Lessons</a>
+      <a href="#how-it-works">How It Works</a>
+  
+      <button class="theme-cycle-btn" onclick="cycleTheme()" title="Click to change color theme">
+        <span class="dot" id="themeDot" style="background:var(--accent)"></span>
+        <span id="themeName">Theme</span>
+      </button>
+    </div>
+  <a href="#lessons" class="nav-cta">Start Speaking</a>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">&#9679; English for Ages 9–12</div>
+  <h1>Speak <span class="accent">Easily</span> Kids</h1>
+  <p>Friendly questions about your life — family, school, animals, games and the world around you. Pick a topic, slide through the questions and have fun talking. No wrong answers.</p>
+</div>
+
+<div class="section" id="lessons">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2>Lesson <span class="accent">Library</span></h2>
+    <p>20 lessons across 4 categories. Click any topic to launch the slide deck.</p>
+  </div>
+  <div class="lesson-grid" id="lessonGrid"></div>
+</div>
+
+<div class="section" id="how-it-works">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2>How It <span class="accent">Works</span></h2>
+    <p>Simple. Visual. Effective.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-step-num">01</div>
+      <h3>Choose a Topic</h3>
+      <p>Browse the library and pick a theme that fits your lesson or the learner's interests.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">02</div>
+      <h3>Slide Through</h3>
+      <p>Each question is presented as a visual slide. Use arrow keys or buttons to navigate. Every time you open a topic the questions appear in a fresh order.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">03</div>
+      <h3>Talk</h3>
+      <p>The questions are designed to spark genuine conversation. No right answers. Just open, confident speaking.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2026 Articulate English. Speak Easily Kids — original materials built by a working teacher.</p>
+</div>
+
+<div class="deck-view" id="deckView">
+  <div class="deck-topbar">
+    <button class="deck-back" onclick="closeDeck()">&#8592; Back</button>
+    <div class="deck-title-wrap">
+      <div class="deck-title-topic" id="deckTitle">Topic Title</div>
+      <div class="deck-title-cat" id="deckTitleCat">Category</div>
+    </div>
+    <button class="deck-btn" id="variantToggle" onclick="toggleVariant()" style="font-size:.75rem;padding:4px 10px">UK</button>
+    <div class="deck-counter">
+      <span class="dc-current" id="dcCurrent">1</span>
+      <span style="color:var(--text-dim);font-size:.6rem">/</span>
+      <span class="dc-total" id="dcTotal">10</span>
+    </div>
+  </div>
+  <div class="slide-container">
+    <div class="slide-bg" id="slideBg">
+      <img src="" alt="" id="slideBgImg">
+    </div>
+    <div class="slide-content">
+      <div class="slide-question-box">
+        <div class="slide-cat" id="slideCat">Category</div>
+        <div class="slide-question" id="slideQuestion">Question goes here</div>
+        <div class="go-deeper"><span class="go-deeper-label">Go deeper</span><span id="slideGoDeeper"></span></div>
+        <div class="answers-card" id="answersCard"><h4>Possible answers</h4><ul id="answersList"></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="deck-controls">
+    <button class="deck-btn icon-btn" onclick="prevSlide()">&#8592;</button>
+    <div class="deck-progress"><div class="deck-progress-fill" id="deckProgressFill" style="width:10%"></div></div>
+    <button class="deck-btn" onclick="toggleAnswers()">&#128161; Reveal possible answers</button>
+    <button class="deck-btn primary" onclick="nextSlide()">Next &#8594;</button>
+  </div>
+</div>
+
+<div class="vocab-tooltip" id="vocabTooltip"><span class="vt-word" id="vtWord"></span><span id="vtDef"></span></div>
+
+<script src="lesson-data.js"></script>
+<script>
+var lessonData = window.lessonData || [];
+if(!lessonData.length){
+  fetch('lesson-data.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) { lessonData = data; if(window.tryInitLibrary) window.tryInitLibrary(); })
+    .catch(function(e) { console.error('Failed to load lesson data:', e); });
+}
+
+(function(){
+"use strict";
+var currentCat=null,currentTopic=null,currentTopicObj=null,questions=[],currentIndex=0;
+
+// Sequential lesson numbering (01..27) shared by the library cards and the deck header.
+var topicNumbers = {};
+function buildTopicNumbers(){
+  topicNumbers = {};
+  var n = 0;
+  for(var i=0;i<window.lessonData.length;i++){
+    var cats = window.lessonData[i];
+    for(var j=0;j<cats.topics.length;j++){
+      n++;
+      topicNumbers[cats.topics[j].slug] = (n<10?'0':'')+n;
+    }
+  }
+}
+function topicLabel(t){
+  if(!t) return '';
+  var num = topicNumbers[t.slug];
+  var title = (t.title||'').replace(/ \(\d+ questions?\)$/,'');
+  return (num ? num+'. ' : '') + title;
+}
+
+// Render lesson grid
+var grid=document.getElementById('lessonGrid');
+var imageMapping = [];
+try {
+  // Normally we would fetch the JSON, but for a single-page static file we'll inject it or a small helper
+  // In this implementation, the parent agent provided the mapping. 
+  // I will use a script to load this mapping from the provided file path if possible, 
+  // but since it's a local file and this is a browser, we should assume the mapping is passed in or fetched.
+  // FOR NOW, I will implement the logic to handle the imageMapping as an object.
+} catch(e) {}
+
+var mappingData = []; 
+fetch("mapping-data.json").then(r=>r.json()).then(d=>{mappingData=d; tryInitLibrary();}).catch(e=>console.error('mapping-data error:',e));
+
+// Initialize library when DOM is ready
+var initAttempts = 0;
+function tryInitLibrary(){
+  initAttempts++;
+  if(window.lessonData && window.lessonData.length > 0){
+    initLibrary();
+  } else if(initAttempts < 50){
+    setTimeout(tryInitLibrary, 200);
+  } else {
+    console.warn('Data load timeout, rendering with available data');
+    initLibrary();
+  }
+}
+window.tryInitLibrary = tryInitLibrary;
+
+function initLibrary(){
+  var grid=document.getElementById('lessonGrid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  buildTopicNumbers();
+  var mappingLookup = {};
+  // Cover images come from mapping-data.json (free stock, byte-verified per topic).
+  try {
+    if(mappingData && mappingData.length > 0){
+      mappingData.forEach(function(item){
+        if(item.id && item.url) mappingLookup[item.id] = item.url;
+      });
+    }
+  } catch(e) {}
+  // Speak Easily: every topic gets its cover image as the slide background.
+  window.localImageMap = {};
+  Object.keys(mappingLookup).forEach(function(slug){
+    if(mappingLookup[slug]) window.localImageMap[slug] = {'0': mappingLookup[slug]};
+  });
+
+  for(var i=0;i<window.lessonData.length;i++){
+    var cat=window.lessonData[i];
+    for(var j=0;j<cat.topics.length;j++){
+      var t=cat.topics[j];
+      var card=document.createElement('a');
+      card.href='#';
+      card.className='lesson-card';
+      card.onclick=function(c,t){return function(e){e.preventDefault();openDeck(c,t);};}(cat.category,t);
+      
+      var imgSrc = mappingLookup[t.slug] || '';
+      var imgHtml = imgSrc 
+        ? '<div class="lesson-card-img-container"><img class="lesson-card-img" src="'+imgSrc+'" alt="" onerror="this.parentElement.innerHTML=\'<div class=lesson-card-img placeholder style=background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.7rem>'+t.slug+'</div>\'"></div>'
+        : '<div class="lesson-card-img-container"><div class="lesson-card-img placeholder" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.7rem">'+t.slug+'</div></div>';
+
+      card.innerHTML = imgHtml + '<div class="lesson-card-content"><div class="lesson-card-body"><div class="lesson-cat">'+cat.category+'</div><h3>'+topicLabel(t)+'</h3><div class="lesson-count">'+t.questions.length+' questions</div></div></div>';
+      grid.appendChild(card);
+    }
+  }
+}
+
+// Auto-init when data loads
+document.addEventListener('DOMContentLoaded', function(){
+  tryInitLibrary();
+});
+
+// Grid is rendered once by initLibrary() (see above), which waits for
+// lesson-data + image mapping to load and uses the resolved online covers.
+// (Removed duplicate immediate render that painted broken local paths first.)
+
+// US/UK spelling swap
+window._variant = (localStorage.getItem('speakEasilyKidsVariant')||'UK');
+function _toUS(s){
+  if(!s) return s;
+  var m = {
+    'travelling':'traveling','traveller':'traveler','travelled':'traveled',
+    'organised':'organized','organisation':'organization','behaviour':'behavior',
+    'centre':'center','colour':'color','favourite':'favorite','programme':'program',
+    'analyse':'analyze','utilise':'utilize','defence':'defense','licence':'license',
+    'practise':'practice','neighbour':'neighbor','catalogue':'catalog','judgement':'judgment',
+    'acknowledgement':'acknowledgment','ageing':'aging','cosy':'cozy','grey':'gray',
+    'whilst':'while','amongst':'among','towards':'toward','labour':'labor',
+    'humour':'humor','rumour':'rumor','honour':'honor','favour':'favor',
+    'recognised':'recognized','organising':'organizing','prioritise':'prioritize',
+    'summarise':'summarize','apologise':'apologize','centre':'center',
+    'colours':'colors','practising':'practicing','practised':'practiced',
+    'realise':'realize','realised':'realized','realising':'realizing',
+    'apologised':'apologized','apologising':'apologizing'
+  };
+  var out = s;
+  Object.keys(m).forEach(function(k){
+    var re = new RegExp('\\b'+k+'\\b','gi');
+    out = out.replace(re, function(match){
+      if(match === match.toUpperCase()) return m[k].toUpperCase();
+      if(match[0] === match[0].toUpperCase()) return m[k][0].toUpperCase()+m[k].slice(1);
+      return m[k];
+    });
+  });
+  return out;
+}
+window.toggleVariant = function(){
+  window._variant = (window._variant === 'US') ? 'UK' : 'US';
+  try { localStorage.setItem('speakEasilyKidsVariant', window._variant); } catch(e){}
+  var btn = document.getElementById('variantToggle');
+  if(btn) btn.textContent = window._variant;
+  if(typeof renderSlide === 'function' && document.getElementById('deckView').classList.contains('open')){
+    renderSlide();
+  }
+};
+document.addEventListener('DOMContentLoaded', function(){
+  var btn = document.getElementById('variantToggle');
+  if(btn) btn.textContent = window._variant;
+});
+
+window.openDeck=function(catName,topic){
+  currentCat=catName;
+  currentTopic=topic.title;
+  currentTopicObj=topic;
+  questions=[];
+  for(var i=0;i<topic.questions.length;i++){
+    var q=topic.questions[i];
+    questions.push({original:q.original,paraphrased:q.paraphrased||'',vocab:q.vocab||[],possibleAnswers:q.possibleAnswers||[]});
+  }
+  // Randomize question order each time the deck opens (no shuffle button needed)
+  for(var k=questions.length-1;k>0;k--){
+    var j=Math.floor(Math.random()*(k+1));
+    var tmp=questions[k];questions[k]=questions[j];questions[j]=tmp;
+  }
+  currentIndex=0;
+  hideAnswers();
+  document.getElementById('deckView').classList.add('open');
+  renderSlide();
+};
+
+window.closeDeck=function(){
+  // renderSlide() writes inline custom properties on <html>; inline styles beat the
+  // [data-theme] rules, so they must be cleared or the theme cycler goes dead.
+  ['--bg','--bg-card','--accent','--text','--cta','--bg2','--bg3'].forEach(function(p){
+    document.documentElement.style.removeProperty(p);
+  });
+  document.getElementById('deckView').classList.remove('open');
+  currentCat=null;currentTopic=null;currentTopicObj=null;questions=[];currentIndex=0;
+};
+
+window.nextSlide=function(){if(currentIndex<questions.length-1){currentIndex++;renderSlide();}};
+window.prevSlide=function(){if(currentIndex>0){currentIndex--;renderSlide();}};
+
+window.hideAnswers=function(){
+  var card=document.getElementById('answersCard');
+  if(card) card.classList.remove('show');
+  hideVocabTip();
+};
+
+window.toggleAnswers=function(){
+  var card=document.getElementById('answersCard');
+  if(!card) return;
+  if(card.classList.contains('show')){card.classList.remove('show');return;}
+  var q=questions[currentIndex];
+  var _us2 = (window._variant === 'US');
+  var _swap2 = function(s){ return _us2 ? _toUS(s) : s; };
+  var list=(q.possibleAnswers||[]).map(function(a){return _swap2(a);});
+  var ul=document.getElementById('answersList');
+  ul.innerHTML='';
+  for(var i=0;i<list.length;i++){
+    var li=document.createElement('li');
+    li.textContent=list[i];
+    ul.appendChild(li);
+  }
+  card.classList.add('show');
+};
+
+window.hideVocabTip=function(){
+  var tip=document.getElementById('vocabTooltip');
+  if(tip) tip.classList.remove('show');
+};
+
+function showVocabTip(word,def,el){
+  var tip=document.getElementById('vocabTooltip');
+  if(!tip) return;
+  document.getElementById('vtWord').textContent=word;
+  document.getElementById('vtDef').textContent=def;
+  tip.classList.add('show');
+  var r=el.getBoundingClientRect();
+  var tw=tip.offsetWidth, th=tip.offsetHeight;
+  var x=Math.min(Math.max(8,r.left+r.width/2-tw/2),window.innerWidth-tw-8);
+  var y=r.top-th-10;
+  if(y<8) y=r.bottom+10;
+  tip.style.left=x+'px';
+  tip.style.top=y+'px';
+}
+
+// Vocab tooltip wiring: any .vocab-inline click shows the definition
+document.addEventListener('click',function(e){
+  var t=e.target;
+  var hit=t.closest?t.closest('.vocab-inline'):null;
+  if(hit){
+    e.preventDefault();e.stopPropagation();
+    var w=hit.getAttribute('data-word')||hit.textContent;
+    var d=hit.getAttribute('data-def')||'';
+    showVocabTip(w,d,hit);
+    return;
+  }
+  hideVocabTip();
+});
+
+window.cycleTheme=function(){
+  // 7 color themes + dark/light base = 9 total options
+  var themes = ['dark','light','jungle','ocean','nebula','beach','planet','sunset','clouds'];
+  var current = document.documentElement.getAttribute('data-theme') || 'dark';
+  var nextIndex = (themes.indexOf(current) + 1) % themes.length;
+  var nextTheme = themes[nextIndex];
+  document.documentElement.setAttribute('data-theme', nextTheme);
+  // Update button dot and label
+  var dot = document.getElementById('themeDot');
+  var label = document.getElementById('themeName');
+  var themeColors = {dark:'#5e6ad2',light:'#5e6ad2',jungle:'#ffe000',ocean:'#abc4ff',nebula:'#07f49e',beach:'#eca9bb',planet:'#f5ccd4',sunset:'#f9a470',clouds:'#abc4ff'};
+  var themeLabels = {dark:'Dark',light:'Light',jungle:'Jungle',ocean:'Ocean',nebula:'Nebula',beach:'Beach',planet:'Planet',sunset:'Sunset',clouds:'Clouds'};
+  if(dot) dot.style.background = themeColors[nextTheme] || '#5e6ad2';
+  if(label) label.textContent = themeLabels[nextTheme] || nextTheme;
+};
+
+// Colour themes (7 palettes)
+var colorThemes = [
+  {name:'jungle',bg:'#0F1400',panel:'#1A2A0F',accent:'#ffe000',text:'#E8F5D0',cta:'#72ce27'},
+  {name:'ocean',bg:'#0A1428',panel:'#142850',accent:'#abc4ff',text:'#edf2fb',cta:'#ccdbfd'},
+  {name:'nebula',bg:'#1a0f2e',panel:'#382c83',accent:'#07f49e',text:'#E8E0FF',cta:'#11cc99'},
+  {name:'beach',bg:'#0E1A2E',panel:'#1A3050',accent:'#eca9bb',text:'#F0F0FF',cta:'#45a0ea'},
+  {name:'planet',bg:'#14121E',panel:'#221E3A',accent:'#f5ccd4',text:'#c9def4',cta:'#d0dbef'},
+  {name:'sunset',bg:'#1A0E0A',panel:'#3A1C14',accent:'#f9a470',text:'#FFF0E0',cta:'#ef9770'},
+  {name:'clouds',bg:'#0C1828',panel:'#182858',accent:'#abc4ff',text:'#edf2fb',cta:'#c1d3fe'}
+];
+var topicThemeMap = {};
+function getTopicTheme(slug){
+  if(!topicThemeMap[slug]){
+    topicThemeMap[slug] = colorThemes[Math.floor(Math.random()*colorThemes.length)];
+  }
+  return topicThemeMap[slug];
+}
+function getQuestionImage(question, topicSlug, questionIndex){
+  // Try topic-specific Pixabay CDN image first
+  var topicMap = (window.localImageMap && window.localImageMap[topicSlug]) || null;
+  if (topicMap) {
+    var byIdx = topicMap[String(questionIndex)];
+    if (byIdx) return byIdx;
+    // Fallback: any indexed image from this topic
+    var keys = Object.keys(topicMap);
+    if (keys.length) return topicMap[keys[questionIndex % keys.length]];
+  }
+  // Final fallback: generic Pixabay photo
+  return 'https://images.pexels.com/photos/7972540/pexels-photo-7972540.jpeg?auto=compress&cs=tysrgb&w=1280';
+}
+
+// Slide backgrounds: one cover image per topic (built from mapping-data.json
+// in initLibrary, so it waits for the same fetch as the library cards).
+window.localImageMap = {};
+
+function renderSlide(){
+  var q=questions[currentIndex];
+  // Apply US/UK spelling variant
+  var _us = (window._variant === 'US');
+  var _swap = function(s){ return _us ? _toUS(s) : s; };
+  var _qOrig = _swap(q.original);
+  var _qPara = _swap(q.paraphrased||'');
+  var _qVocab = (q.vocab||[]).map(function(v){ return {word:_swap(v.word), definition:_swap(v.definition||'')}; });
+  var _qAns = (q.possibleAnswers||[]).map(function(a){ return _swap(a); });
+  document.getElementById('deckTitle').textContent=topicLabel(currentTopicObj || {slug:'',title:currentTopic});
+  var catEl = document.getElementById('deckTitleCat');
+  if(catEl) catEl.textContent = currentCat;
+  document.getElementById('dcCurrent').textContent=(currentIndex+1);
+  document.getElementById('dcTotal').textContent=questions.length;
+  document.getElementById('slideCat').textContent=currentCat;
+
+  // Question text with vocab words wrapped as dotted-underline inline spans.
+  // Single-pass wrap: the old sequential wrap re-scanned its own inserted HTML,
+  // so a vocab word inside another word's definition corrupted the markup
+  // (e.g. "excited" inside the definition of "look forward to").
+  function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function wrapVocab(text,vocab){
+    var esc=escapeHtml(text||'');
+    if(!vocab||!vocab.length) return esc;
+    var defs={},alts=[];
+    for(var i=0;i<vocab.length;i++){
+      var w=vocab[i].word;
+      if(!w) continue;
+      var ew=escapeHtml(w);
+      defs[ew.toLowerCase()]=vocab[i].definition||'';
+      alts.push(ew.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+    }
+    if(!alts.length) return esc;
+    alts.sort(function(a,b){return b.length-a.length;});
+    var re=new RegExp('\\b('+alts.join('|')+')\\b','gi');
+    return esc.replace(re,function(m){
+      var def=defs[m.toLowerCase()]||'';
+      return '<span class="vocab-inline" data-word="'+m.replace(/"/g,'&quot;')+'" data-def="'+def.replace(/"/g,'&quot;')+'">'+m+'</span>';
+    });
+  }
+  var qEl=document.getElementById('slideQuestion');
+  qEl.textContent='';
+  qEl.innerHTML=wrapVocab(_qOrig,_qVocab);
+  var gdEl=document.getElementById('slideGoDeeper');
+  gdEl.innerHTML=wrapVocab(_qPara,_qVocab);
+
+  document.getElementById('deckProgressFill').style.width=((currentIndex+1)/questions.length*100)+'%';
+  hideAnswers();
+
+  // Apply per-topic random color theme
+  var slug = currentTopicObj ? (currentTopicObj.slug||'') : currentTopic.toLowerCase().replace(/[^a-z0-9]/g,'');
+  var theme = getTopicTheme(slug);
+  document.documentElement.style.setProperty('--bg', theme.bg);
+  document.documentElement.style.setProperty('--bg-card', theme.panel);
+  document.documentElement.style.setProperty('--accent', theme.accent);
+  document.documentElement.style.setProperty('--text', theme.text);
+  document.documentElement.style.setProperty('--cta', theme.cta);
+  document.documentElement.style.setProperty('--bg2', theme.bg);
+  document.documentElement.style.setProperty('--bg3', theme.panel);
+
+  // Use local image if available, otherwise fallback to Pollinations
+  var localImg = (window.localImageMap[slug] && window.localImageMap[slug][String(currentIndex)]);
+  var imgUrl = localImg || getQuestionImage(q.original, slug, currentIndex);
+  var bgImg = document.getElementById('slideBgImg');
+  // Crossfade: fade out, swap src, fade in on load (instant if cached)
+  if(bgImg.src !== imgUrl){
+    bgImg.style.opacity = 0;
+    var fadeIn = function(){ bgImg.style.opacity = 1; };
+    bgImg.onload = fadeIn;
+    bgImg.onerror = fadeIn;
+    bgImg.src = imgUrl;
+    bgImg.alt = currentTopic;
+    if(bgImg.complete) fadeIn();
+  }
+  // Preload adjacent slides for instant navigation
+  [currentIndex+1, currentIndex-1].forEach(function(ix){
+    if(ix < 0 || ix >= questions.length) return;
+    var nq = questions[ix];
+    var nImg = (window.localImageMap[slug] && window.localImageMap[slug][String(ix)])
+      || getQuestionImage(nq.original, slug, ix);
+    var pre = new Image();
+    pre.src = nImg;
+  });
+  // Re-trigger entrance animation on the question box each slide change
+  var qBox = document.querySelector('.slide-question-box');
+  if(qBox){
+    qBox.style.animation = 'none';
+    void qBox.offsetWidth;
+    qBox.style.animation = '';
+  }
+}
+
+// Image toggle. The toggle node is optional: without this guard a missing element
+// throws and aborts the whole IIFE, which silently kills the keyboard handler below.
+var deckImagesOn = true;
+var deckImgToggle = document.getElementById('deckImgToggle');
+if (deckImgToggle) {
+  deckImgToggle.addEventListener('click', function() {
+    deckImagesOn = !deckImagesOn;
+    var b = document.getElementById('deckImgToggleBtn');
+    if (b) b.classList.toggle('on', deckImagesOn);
+    var visuals = document.getElementById('slideVisuals');
+    if (visuals) visuals.classList.toggle('images-off', !deckImagesOn);
+  });
+}
+
+document.addEventListener("keydown",function(e){
+  if(!document.getElementById("deckView").classList.contains("open"))return;
+  if(e.key==="ArrowRight"||e.key===" "){e.preventDefault();nextSlide();}
+  if(e.key==="ArrowLeft"){e.preventDefault();prevSlide();}
+  if(e.key==="r"||e.key==="R"){toggleAnswers();}
+  if(e.key==="i"||e.key==="I"){ if(deckImgToggle) deckImgToggle.click(); }
+  if(e.key==="Escape"){closeDeck();}
+});
+})();
+</script>
+
+</body>
+</html>
