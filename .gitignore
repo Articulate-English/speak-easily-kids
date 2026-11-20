@@ -1,2 +1,13 @@
 node_modules/
 .DS_Store
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+data.db
+*.sqlite
+*.sqlite3
+credentials*
+id_rsa*

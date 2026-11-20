@@ -26,7 +26,6 @@
   --text:#171717;--text-secondary:#4a4a4a;--text-muted:#6b6b6b;--text-dim:#999999;
   --accent:#5e6ad2;--accent-hover:#4f5bc0;--accent-glow:rgba(94,106,210,0.15);--accent-bg:rgba(94,106,210,0.05);
 }
-[data-theme="wte"]{--bg:#08090a;--bg2:#0f1011;--bg3:#191a1b;--accent:#a3e635;--accent-hover:#b8f54a;--accent-glow:rgba(163,230,53,0.25);--accent-bg:rgba(163,230,53,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#f7f8f8;--text-secondary:#d0d6e0;--text-muted:#8a8f98;--text-dim:#62666d;--bg-card:rgba(255,255,255,0.02)}
 [data-theme="jungle"]{--bg:#0F1400;--bg2:#1A2A0F;--bg3:#243515;--accent:#ffe000;--accent-hover:#ffec4d;--accent-glow:rgba(255,224,0,0.25);--accent-bg:rgba(255,224,0,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#E8F5D0;--text-secondary:#c8ddb0;--text-muted:#8aaa6a;--text-dim:#5a7a3a;--bg-card:rgba(255,255,255,0.02);--cta:#72ce27}
 [data-theme="ocean"]{--bg:#0A1428;--bg2:#142850;--bg3:#1e3c72;--accent:#abc4ff;--accent-hover:#c4d8ff;--accent-glow:rgba(171,196,255,0.25);--accent-bg:rgba(171,196,255,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#edf2fb;--text-secondary:#c8d8f0;--text-muted:#8a9ab0;--text-dim:#5a6a80;--bg-card:rgba(255,255,255,0.02);--cta:#ccdbfd}
 [data-theme="nebula"]{--bg:#1a0f2e;--bg2:#382c83;--bg3:#4a3a9a;--accent:#07f49e;--accent-hover:#3affb8;--accent-glow:rgba(7,244,158,0.25);--accent-bg:rgba(7,244,158,0.08);--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--text:#E8E0FF;--text-secondary:#c8c0ff;--text-muted:#8a80b0;--text-dim:#5a5080;--bg-card:rgba(255,255,255,0.02);--cta:#11cc99}
@@ -87,7 +86,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .deck-btn.primary:active{transform:scale(0.97)}
 .deck-btn.icon-btn{width:36px;height:36px;padding:0;justify-content:center;border-radius:50%}
 
-.deck-title{font-family:var(--font);font-size:.85rem;font-weight:510;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text-secondary);letter-spacing:-0.2px}
 .deck-title-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:0}
 .deck-title-topic{font-size:.85rem;font-weight:590;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;letter-spacing:-0.2px}
 .deck-title-cat{font-family:var(--mono);font-size:.6rem;color:var(--accent);letter-spacing:1px;text-transform:uppercase;opacity:.8}
@@ -117,7 +115,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .slide-cat{font-family:var(--mono);font-size:.6rem;font-weight:510;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .slide-question{font-size:1.5rem;font-weight:510;line-height:1.35;color:#fff;letter-spacing:-0.5px;margin-bottom:12px}
 @media(max-width:768px){.slide-question{font-size:1.15rem}}
-.slide-paraphrase{font-size:.95rem;color:rgba(255,255,255,0.65);line-height:1.6;font-style:italic;padding-left:14px;border-left:2px solid rgba(255,255,255,0.15)}
 
 /* ── Vocab tooltips ── */
 .vocab-inline{border-bottom:2px dotted var(--accent);cursor:pointer;font-weight:560;color:var(--accent)}
@@ -153,20 +150,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .deck-controls{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-top:1px solid var(--border-subtle);flex-shrink:0;background:rgba(8,9,10,0.9);z-index:5}
 .deck-progress{flex:1;height:3px;background:rgba(255,255,255,0.06);border-radius:2px;max-width:280px;overflow:hidden}
 .deck-progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .3s cubic-bezier(.4,0,.2,1)}
-
-/* ── Category filter pills ── */
-.filter-bar{display:flex;gap:6px;padding:16px 32px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--border-subtle)}
-.filter-bar::-webkit-scrollbar{display:none}
-.filter-pill{
-  display:inline-flex;align-items:center;gap:4px;
-  background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);
-  color:var(--text-muted);padding:5px 14px;border-radius:9999px;
-  cursor:pointer;font-family:var(--font);font-size:.7rem;font-weight:510;
-  transition:all .15s;white-space:nowrap;flex-shrink:0;
-}
-.filter-pill:hover{border-color:var(--accent);color:var(--text);background:var(--accent-bg)}
-.filter-pill.active{background:var(--accent);border-color:var(--accent);color:#fff}
-.filter-pill:active{transform:scale(0.96)}
 
 /* ═══ HOW IT WORKS ═══ */
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -213,9 +196,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
   .lesson-grid{grid-template-columns:1fr}
   .how-grid{grid-template-columns:1fr}
 }
-
-/* ═══ UTILITY ═══ */
-.hidden{display:none!important}
 
 /* (removed dead CSS for .slide-visuals / .deck-img-toggle / .deck-counter-v — no such markup) */
 </style>
@@ -351,17 +331,6 @@ function topicLabel(t){
   return (num ? num+'. ' : '') + title;
 }
 
-// Render lesson grid
-var grid=document.getElementById('lessonGrid');
-var imageMapping = [];
-try {
-  // Normally we would fetch the JSON, but for a single-page static file we'll inject it or a small helper
-  // In this implementation, the parent agent provided the mapping. 
-  // I will use a script to load this mapping from the provided file path if possible, 
-  // but since it's a local file and this is a browser, we should assume the mapping is passed in or fetched.
-  // FOR NOW, I will implement the logic to handle the imageMapping as an object.
-} catch(e) {}
-
 var mappingData = []; 
 fetch("mapping-data.json").then(r=>r.json()).then(d=>{mappingData=d; tryInitLibrary();}).catch(e=>console.error('mapping-data error:',e));
 
@@ -411,7 +380,7 @@ function initLibrary(){
       
       var imgSrc = mappingLookup[t.slug] || '';
       var imgHtml = imgSrc 
-        ? '<div class="lesson-card-img-container"><img class="lesson-card-img" src="'+imgSrc+'" alt="" onerror="this.parentElement.innerHTML=\'<div class=lesson-card-img placeholder style=background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.7rem>'+t.slug+'</div>\'"></div>'
+        ? '<div class="lesson-card-img-container"><img class="lesson-card-img" src="'+imgSrc+'" alt="" data-slug="'+t.slug+'" onerror="imgFallback(this)"></div>'
         : '<div class="lesson-card-img-container"><div class="lesson-card-img placeholder" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.7rem">'+t.slug+'</div></div>';
 
       card.innerHTML = imgHtml + '<div class="lesson-card-content"><div class="lesson-card-body"><div class="lesson-cat">'+cat.category+'</div><h3>'+topicLabel(t)+'</h3><div class="lesson-count">'+t.questions.length+' questions</div></div></div>';
@@ -446,7 +415,15 @@ function _toUS(s){
     'summarise':'summarize','apologise':'apologize','centre':'center',
     'colours':'colors','practising':'practicing','practised':'practiced',
     'realise':'realize','realised':'realized','realising':'realizing',
-    'apologised':'apologized','apologising':'apologizing'
+    'apologised':'apologized','apologising':'apologizing',
+    'flavour':'flavor','flavours':'flavors','neighbour':'neighbor','neighbours':'neighbors',
+    'travelled':'traveled','travelling':'traveling','practised':'practiced','practises':'practices',
+    'organised':'organized','organising':'organizing','recognised':'recognized','recognising':'recognizing',
+    'summarised':'summarized','summarising':'summarizing','emphasised':'emphasized','emphasising':'emphasizing',
+    'behaviour':'behavior','behaviours':'behaviors','humour':'humor','honour':'honor','labour':'labor',
+    'favour':'favor','favours':'favors','theatre':'theater','metre':'meter','litre':'liter',
+    'defence':'defense','offence':'offense','licence':'license','catalogue':'catalog','programme':'program',
+    'marvellous':'marvelous','counselling':'counseling','modelling':'modeling','labelled':'labeled'
   };
   var out = s;
   Object.keys(m).forEach(function(k){
@@ -500,6 +477,7 @@ window.closeDeck=function(){
     document.documentElement.style.removeProperty(p);
   });
   document.getElementById('deckView').classList.remove('open');
+  window.hideVocabTip();   // the tooltip is a sibling of #deckView, so closing the deck leaves it behind
   currentCat=null;currentTopic=null;currentTopicObj=null;questions=[];currentIndex=0;
 };
 
@@ -528,6 +506,13 @@ window.toggleAnswers=function(){
     ul.appendChild(li);
   }
   card.classList.add('show');
+};
+
+window.imgFallback=function(img){
+  var c=img && img.parentElement;
+  if(!c) return;
+  c.innerHTML='<div class="lesson-card-img placeholder" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.7rem">'
+    + (img.getAttribute('data-slug')||'') +'</div>';
 };
 
 window.hideVocabTip=function(){
@@ -623,7 +608,6 @@ function renderSlide(){
   var _qOrig = _swap(q.original);
   var _qPara = _swap(q.paraphrased||'');
   var _qVocab = (q.vocab||[]).map(function(v){ return {word:_swap(v.word), definition:_swap(v.definition||'')}; });
-  var _qAns = (q.possibleAnswers||[]).map(function(a){ return _swap(a); });
   document.getElementById('deckTitle').textContent=topicLabel(currentTopicObj || {slug:'',title:currentTopic});
   var catEl = document.getElementById('deckTitleCat');
   if(catEl) catEl.textContent = currentCat;
@@ -644,8 +628,21 @@ function renderSlide(){
       var w=vocab[i].word;
       if(!w) continue;
       var ew=escapeHtml(w);
-      defs[ew.toLowerCase()]=vocab[i].definition||'';
-      alts.push(ew.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+      var def=vocab[i].definition||'';
+      var base=ew.toLowerCase();
+      var forms=[ew];
+      // Children say "brothers", "played", "playing" - cover those so the tooltip is reachable.
+      if(base.length>3){
+        if(/[^aeiou]y$/.test(base)){ forms.push(ew.slice(0,-1)+'ies', ew.slice(0,-1)+'ied'); }
+        else if(/(s|x|z|ch|sh)$/.test(base)){ forms.push(ew+'es', ew+'ed'); }
+        else { forms.push(ew+'s', ew+'es'); }
+        if(/e$/.test(base)){ forms.push(ew+'d', ew.slice(0,-1)+'ing'); }
+        else { forms.push(ew+'ed', ew+'ing'); }
+      }
+      for(var f=0;f<forms.length;f++){
+        defs[forms[f].toLowerCase()]=def;
+        alts.push(forms[f].replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+      }
     }
     if(!alts.length) return esc;
     alts.sort(function(a,b){return b.length-a.length;});
@@ -707,26 +704,11 @@ function renderSlide(){
   }
 }
 
-// Image toggle. The toggle node is optional: without this guard a missing element
-// throws and aborts the whole IIFE, which silently kills the keyboard handler below.
-var deckImagesOn = true;
-var deckImgToggle = document.getElementById('deckImgToggle');
-if (deckImgToggle) {
-  deckImgToggle.addEventListener('click', function() {
-    deckImagesOn = !deckImagesOn;
-    var b = document.getElementById('deckImgToggleBtn');
-    if (b) b.classList.toggle('on', deckImagesOn);
-    var visuals = document.getElementById('slideVisuals');
-    if (visuals) visuals.classList.toggle('images-off', !deckImagesOn);
-  });
-}
-
 document.addEventListener("keydown",function(e){
   if(!document.getElementById("deckView").classList.contains("open"))return;
   if(e.key==="ArrowRight"||e.key===" "){e.preventDefault();nextSlide();}
   if(e.key==="ArrowLeft"){e.preventDefault();prevSlide();}
   if(e.key==="r"||e.key==="R"){toggleAnswers();}
-  if(e.key==="i"||e.key==="I"){ if(deckImgToggle) deckImgToggle.click(); }
   if(e.key==="Escape"){closeDeck();}
 });
 })();
