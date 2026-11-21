@@ -21,3 +21,15 @@ Live: https://articulate-english.github.io/speak-easily-kids/
 - `mapping-data.json` — cover image per topic
 
 Cover images are free-to-use stock from Pexels.
+
+## Paygate
+
+Four topics are free; the other sixteen are locked. Locked topics open the buy
+modal (honest "On Payhip soon" state until the store products exist) and the
+licence-key unlock row. A teacher key unlocks the app and enables **Share topic**,
+which mints a signed link that unlocks exactly one topic for a student.
+
+- `lesson-data.js` ships only the free teaser plus metadata for all 20 topics,
+  encrypted under a public key. The remaining question text is sealed per buyer /
+  per shared topic by the unlock Worker (`ae-sliding-in`) and never ships.
+- `app-runtime.js` — access check, unlock, share, deep links.

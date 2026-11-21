@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.pexels.com https://cdn.pixabay.com; connect-src 'self'; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.pexels.com https://cdn.pixabay.com; connect-src 'self' https://ae-sliding-in.billiethomasonsound.workers.dev; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Speak Easily Kids — English Question Cards for Ages 9–12</title>
@@ -198,6 +198,22 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 }
 
 /* (removed dead CSS for .slide-visuals / .deck-img-toggle / .deck-counter-v — no such markup) */
+/* ═══ PAYGATE ═══ */
+.free-badge{position:absolute;top:10px;right:10px;z-index:3;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35);color:#34d399;font-family:var(--mono);font-size:.6rem;letter-spacing:1px;text-transform:uppercase;padding:4px 8px;border-radius:6px}
+.buy-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.7);backdrop-filter:blur(8px)}
+.buy-modal.open{display:flex}
+.buy-modal-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:440px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.buy-modal-card h3{font-size:1.3rem;margin-bottom:8px}
+.buy-modal-card .price{font-family:var(--mono);font-size:1.6rem;color:var(--accent);margin:12px 0}
+.buy-modal-card .sub{color:var(--text-muted);font-size:.85rem;margin-bottom:20px}
+.buy-modal-card .btn-buy{display:inline-block;padding:12px 28px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:590;font-size:.9rem;border:none;cursor:pointer;transition:all .2s}
+.buy-modal-card .btn-buy:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.buy-modal-card .btn-buy.disabled{background:var(--bg3);color:var(--text-dim);cursor:not-allowed;pointer-events:none}
+.buy-modal-card .btn-close{margin-top:12px;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:.8rem}
+.buy-modal-card .empty-state{margin-top:12px;font-family:var(--mono);font-size:.7rem;color:var(--text-dim);letter-spacing:.5px}
+.unlock-row{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.unlock-row input{flex:1;max-width:220px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:10px 12px;font-family:var(--mono);font-size:.8rem}
+.unlock-msg{min-height:1.2em;margin-top:10px;font-size:.75rem;color:var(--text-dim)}
 </style>
 </head>
 <body>
@@ -260,6 +276,24 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
   <p>&copy; 2026 Articulate English. Speak Easily Kids — original materials built by a working teacher.</p>
 </div>
 
+<div class="buy-modal" id="buyModal" onclick="if(event.target===this)closeBuyModal()">
+  <div class="buy-modal-card">
+    <h3>Unlock all 20 topics</h3>
+    <p class="sub" id="buyModalTopic">All 20 topics, 240 questions, on any device.</p>
+    <div class="price">One-off purchase</div>
+    <p class="sub">Every topic in Speak Easily Kids · works on any device</p>
+    <p class="sub">A model answer for every question · your key never expires</p>
+    <button class="btn-buy disabled" id="buyBtn">On Payhip soon</button>
+    <div class="empty-state" id="buyEmpty">Payhip checkout opens here once the store is live.</div>
+    <div class="unlock-row">
+      <input id="licenceKey" type="text" placeholder="License key" autocomplete="off" autocapitalize="none">
+      <button class="btn-buy" id="unlockBtn" type="button">Unlock</button>
+    </div>
+    <div class="unlock-msg" id="unlockMsg"></div>
+    <button class="btn-close" onclick="closeBuyModal()">Close</button>
+  </div>
+</div>
+
 <div class="deck-view" id="deckView">
   <div class="deck-topbar">
     <button class="deck-back" onclick="closeDeck()">&#8592; Back</button>
@@ -291,6 +325,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
     <button class="deck-btn icon-btn" onclick="prevSlide()">&#8592;</button>
     <div class="deck-progress"><div class="deck-progress-fill" id="deckProgressFill" style="width:10%"></div></div>
     <button class="deck-btn" onclick="toggleAnswers()">&#128161; Reveal possible answers</button>
+    <button class="deck-btn" id="shareBtn" data-slug="">Share topic</button>
     <button class="deck-btn primary" onclick="nextSlide()">Next &#8594;</button>
   </div>
 </div>
@@ -298,14 +333,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <div class="vocab-tooltip" id="vocabTooltip"><span class="vt-word" id="vtWord"></span><span id="vtDef"></span></div>
 
 <script src="lesson-data.js"></script>
+<script src="app-runtime.js"></script>
 <script>
 var lessonData = window.lessonData || [];
-if(!lessonData.length){
-  fetch('lesson-data.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) { lessonData = data; if(window.tryInitLibrary) window.tryInitLibrary(); })
-    .catch(function(e) { console.error('Failed to load lesson data:', e); });
-}
 
 (function(){
 "use strict";
@@ -376,14 +406,20 @@ function initLibrary(){
       var card=document.createElement('a');
       card.href='#';
       card.className='lesson-card';
-      card.onclick=function(c,t){return function(e){e.preventDefault();openDeck(c,t);};}(cat.category,t);
+      var isOpen = window.speakEasyKidsIsOpen ? window.speakEasyKidsIsOpen(t.slug) : true;
+      if(isOpen){
+        card.onclick=function(c,t){return function(e){e.preventDefault();openDeck(c,t);};}(cat.category,t);
+      } else {
+        card.onclick=function(t){return function(e){e.preventDefault();openBuyModal(t);};}(t);
+      }
       
       var imgSrc = mappingLookup[t.slug] || '';
       var imgHtml = imgSrc 
         ? '<div class="lesson-card-img-container"><img class="lesson-card-img" src="'+imgSrc+'" alt="" data-slug="'+t.slug+'" onerror="imgFallback(this)"></div>'
         : '<div class="lesson-card-img-container"><div class="lesson-card-img placeholder" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.7rem">'+t.slug+'</div></div>';
 
-      card.innerHTML = imgHtml + '<div class="lesson-card-content"><div class="lesson-card-body"><div class="lesson-cat">'+cat.category+'</div><h3>'+topicLabel(t)+'</h3><div class="lesson-count">'+t.questions.length+' questions</div></div></div>';
+      var badge = isOpen ? '<div class="free-badge">Free</div>' : '';
+      card.innerHTML = imgHtml + '<div class="lesson-card-content">' + badge + '<div class="lesson-card-body"><div class="lesson-cat">'+cat.category+'</div><h3>'+topicLabel(t)+'</h3><div class="lesson-count">'+(t.count!=null?t.count:(t.questions?t.questions.length:0))+' questions</div></div></div>';
       grid.appendChild(card);
     }
   }
@@ -478,6 +514,10 @@ window.closeDeck=function(){
   });
   document.getElementById('deckView').classList.remove('open');
   window.hideVocabTip();   // the tooltip is a sibling of #deckView, so closing the deck leaves it behind
+  // Back returns to the portal, not to a stale ?lesson=&grant= deep link
+  if (window.history && history.replaceState) {
+    history.replaceState(null, '', window.location.pathname + window.location.hash);
+  }
   currentCat=null;currentTopic=null;currentTopicObj=null;questions=[];currentIndex=0;
 };
 
