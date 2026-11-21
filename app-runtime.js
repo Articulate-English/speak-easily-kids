@@ -35,6 +35,10 @@
   window.speakEasyKidsIsOpen = function (slug) {
     return FREE_SLUGS.indexOf(slug) >= 0 || unlocked || !!granted[slug];
   };
+  /* the free teaser stays labelled "Free" even after an unlock */
+  window.speakEasyKidsIsFree = function (slug) {
+    return FREE_SLUGS.indexOf(slug) >= 0;
+  };
 
   /* ── crypto (mirrors the Worker's hkdfFromString) ── */
   function b64urlDecode(s) {

@@ -418,7 +418,9 @@ function initLibrary(){
         ? '<div class="lesson-card-img-container"><img class="lesson-card-img" src="'+imgSrc+'" alt="" data-slug="'+t.slug+'" onerror="imgFallback(this)"></div>'
         : '<div class="lesson-card-img-container"><div class="lesson-card-img placeholder" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.7rem">'+t.slug+'</div></div>';
 
-      var badge = isOpen ? '<div class="free-badge">Free</div>' : '';
+      // only the genuinely free topics carry the badge — after an unlock everything
+      // is open, and labelling all 20 "Free" would be wrong.
+      var badge = (window.speakEasyKidsIsFree && window.speakEasyKidsIsFree(t.slug)) ? '<div class="free-badge">Free</div>' : '';
       card.innerHTML = imgHtml + '<div class="lesson-card-content">' + badge + '<div class="lesson-card-body"><div class="lesson-cat">'+cat.category+'</div><h3>'+topicLabel(t)+'</h3><div class="lesson-count">'+(t.count!=null?t.count:(t.questions?t.questions.length:0))+' questions</div></div></div>';
       grid.appendChild(card);
     }
