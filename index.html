@@ -132,6 +132,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 /* ── Go deeper ── */
 .go-deeper{font-size:.95rem;color:rgba(255,255,255,0.75);line-height:1.6;padding-left:14px;border-left:2px solid var(--accent);margin-top:6px}
 .go-deeper-label{display:block;font-family:var(--mono);font-size:.55rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.word-bank{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 4px}
+.word-chip{font-family:var(--mono);font-size:.66rem;letter-spacing:.5px;padding:5px 10px;border-radius:99px;border:1px solid var(--accent);color:var(--accent);background:rgba(255,255,255,.05);cursor:pointer}
+.word-chip:hover{background:rgba(255,255,255,.12)}
+.go-deeper ol{margin:5px 0 0 18px;padding:0}
+.go-deeper li{margin-bottom:6px;line-height:1.5}
+.go-deeper li b{color:var(--accent);font-weight:700}
+.answer-hint{font-size:.82rem;color:var(--text-dim);margin:0 0 8px;padding-left:10px;border-left:2px solid var(--accent)}
 
 /* ── Reveal possible answers ── */
 .answers-card{
@@ -317,8 +324,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
       <div class="slide-question-box">
         <div class="slide-cat" id="slideCat">Category</div>
         <div class="slide-question" id="slideQuestion">Question goes here</div>
-        <div class="go-deeper"><span class="go-deeper-label">Go deeper</span><span id="slideGoDeeper"></span></div>
-        <div class="answers-card" id="answersCard"><h4>Possible answers</h4><ul id="answersList"></ul></div>
+        <div class="word-bank" id="slideWordBank"></div>
+        <div class="go-deeper" id="goDeeperBox"><span class="go-deeper-label">Follow-up ladder</span><ol id="slideLadder"></ol><span id="slideGoDeeper" hidden></span></div>
+        <div class="answers-card" id="answersCard"><h4>Possible answers</h4><div class="answer-hint" id="answerHint"></div><ul id="answersList"></ul></div>
       </div>
     </div>
   </div>
@@ -496,7 +504,7 @@ window.openDeck=function(catName,topic){
   questions=[];
   for(var i=0;i<topic.questions.length;i++){
     var q=topic.questions[i];
-    questions.push({original:q.original,paraphrased:q.paraphrased||'',vocab:q.vocab||[],possibleAnswers:q.possibleAnswers||[]});
+    questions.push({original:q.original,paraphrased:q.paraphrased||'',vocab:q.vocab||[],possibleAnswers:q.possibleAnswers||[],ladder:q.ladder||[],hint:q.hint||''});
   }
   // Randomize question order each time the deck opens (no shuffle button needed)
   for(var k=questions.length-1;k>0;k--){
@@ -541,6 +549,8 @@ window.toggleAnswers=function(){
   var _us2 = (window._variant === 'US');
   var _swap2 = function(s){ return _us2 ? _toUS(s) : s; };
   var list=(q.possibleAnswers||[]).map(function(a){return _swap2(a);});
+  var hint=document.getElementById('answerHint');
+  if(hint){ hint.textContent = q.hint ? _swap2(q.hint) : ''; hint.style.display = q.hint ? '' : 'none'; }
   var ul=document.getElementById('answersList');
   ul.innerHTML='';
   for(var i=0;i<list.length;i++){
@@ -699,7 +709,36 @@ function renderSlide(){
   qEl.textContent='';
   qEl.innerHTML=wrapVocab(_qOrig,_qVocab);
   var gdEl=document.getElementById('slideGoDeeper');
-  gdEl.innerHTML=wrapVocab(_qPara,_qVocab);
+  gdEl.innerHTML='';
+  var ladderEl=document.getElementById('slideLadder');
+  var deeperBox=document.getElementById('goDeeperBox');
+  var steps=(q.ladder||[]).slice();
+  if(ladderEl){
+    ladderEl.innerHTML='';
+    steps.forEach(function(step){
+      var li=document.createElement('li');
+      var b=document.createElement('b');
+      b.textContent=(step.label||'')+': ';
+      li.appendChild(b);
+      li.appendChild(document.createTextNode(_swap(step.text||'')));
+      ladderEl.appendChild(li);
+    });
+  }
+  if(deeperBox) deeperBox.style.display = steps.length ? '' : 'none';
+  var wbEl=document.getElementById('slideWordBank');
+  if(wbEl){
+    wbEl.innerHTML='';
+    (q.vocab||[]).forEach(function(v){
+      var chip=document.createElement('button');
+      chip.type='button';
+      chip.className='vocab-inline word-chip';
+      chip.setAttribute('data-word',_swap(v.word||''));
+      chip.setAttribute('data-def',_swap(v.definition||''));
+      chip.textContent=_swap(v.word||'');
+      wbEl.appendChild(chip);
+    });
+    wbEl.style.display = (q.vocab||[]).length ? '' : 'none';
+  }
 
   document.getElementById('deckProgressFill').style.width=((currentIndex+1)/questions.length*100)+'%';
   hideAnswers();
