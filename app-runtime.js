@@ -11,10 +11,10 @@
   var PATH = "/speak-easily-kids";
   var WORKER = "https://ae-sliding-in.billiethomasonsound.workers.dev";
   var APP_URL = "https://articulate-english.github.io/speak-easily-kids/";
-  var PRODUCT_KEY = "";   /* Payhip product key — empty keeps the honest "soon" state */
+  var PRODUCT_KEY = "";   /* Payhip seller/product key — set in Payhip dashboard */
   var TEACHER_PRODUCT_KEY = "teacher";  /* lets a teacher key unlock + share before the store is live */
   var EFFECTIVE_PRODUCT_KEY = PRODUCT_KEY || TEACHER_PRODUCT_KEY;
-  var BUY_URL = "";       /* Payhip checkout URL — empty keeps the honest "soon" state */
+  var BUY_URL = "";       /* Payhip checkout URL — set in Payhip dashboard */
   var FREE_SLUGS = ["myfamily", "mybestfriend", "gamesandsports", "animalsandnature"];
   var LS_GRANTED = "speak-easily-kids-granted";
   var LS_LICENCE = "speak-easily-kids-licence";
